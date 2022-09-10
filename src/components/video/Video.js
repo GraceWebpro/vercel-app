@@ -2,8 +2,12 @@ import React, { useState, useEffect } from 'react'
 import { collection, onSnapshot } from "@firebase/firestore";
 import { db } from '../../config/firebase'
 import './video.css'
+import useDocumentTitle from './useDocumentTitle'
+
 
 const Video = () => {
+    useDocumentTitle('Video | Michael O. Wilson')
+
     const [movies, setMovies] = useState([]);
     useEffect(() => {
         const collRef = collection(db, 'movies')
