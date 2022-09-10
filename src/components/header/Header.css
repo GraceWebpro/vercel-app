@@ -100,7 +100,7 @@ h3 {
 
 @media screen and (max-width: 400px) {
     h3 {
-        margin-left: -100px;
+        margin-left: -300px;
         font-size: 15px;
         margin-top: 5px;
     }
