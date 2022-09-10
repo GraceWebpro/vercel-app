@@ -1,0 +1,31 @@
+.footer {
+    background-color: black;
+    height: 470px;
+    width: 100%;
+}
+
+h5 {
+    color: rgb(194, 187, 187);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    text-transform: uppercase;
+    padding: 30px 0 0 0;
+}
+
+input {
+    width: 350px;
+    height: 36px;
+    text-align: center;
+    font-size: 20px;
+    border: 3px solid rgb(214, 209, 209);
+}
+
+a {
+    font-size: 25px;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding-bottom: 20px;
+}
+
