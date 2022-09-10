@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { collection, onSnapshot } from "@firebase/firestore";
 import { db } from '../../config/firebase'
 import './music.css'
-import useDocumentTitle from './useDocumentTitle'
-
+import useDocumentTitle from '../../useDocumentTitle';
 
 const Music = () => {
     useDocumentTitle('Music | Michael O. Wilson')
