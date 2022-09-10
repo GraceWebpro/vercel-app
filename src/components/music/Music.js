@@ -1,8 +1,42 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { collection, onSnapshot } from "@firebase/firestore";
+import { db } from '../../config/firebase'
+import './music.css'
 
 const Music = () => {
+    const [isMusics, setMusic] = useState([]);
+    useEffect(() => {
+        const collRef = collection(db, 'music')
+
+        const fetchUsers = onSnapshot(collRef, snapshot => {
+            setMusic(snapshot.docs.map(doc => {
+                return {
+                    id: doc.id,
+                    title: doc.data().title,
+                    image: doc.data().images,
+                    homepage: doc.data().homepage,
+                    month: doc.data().month
+                }
+            }))
+            fetchUsers();
+        })
+    },[])
   return (
-    <div>Music</div>
+    <div>
+        <h1>Music</h1>
+        {isMusics.map(isMusic => {
+            return (
+                <div key={isMusic.id} className='music-container'>
+                    <div className='music'>
+                        <img src={isMusic.image} alt={isMusic.title} width={350} height={350} />
+                        <h4><a href={isMusic.homepage}>{isMusic.title}</a></h4>
+                        <p>{isMusic.month}</p>
+                    </div>
+                </div>
+            )
+        })}
+        
+    </div>
   )
 }
 
