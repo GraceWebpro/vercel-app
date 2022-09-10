@@ -2,6 +2,7 @@ import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Header from './components/header/Header';
 import Music from './components/music/Music';
+import Footer from './components/footer/Footer';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Switch>
           <Route exact path='/music' component={Music}/>
         </Switch>
+        <Footer />
       </Router>
     </div>
   );
