@@ -103,3 +103,15 @@
     width: 80%;
 }
 
+@media screen and (max-width: 400px) {
+    .container, .container2,.video-container2 {
+        width: 22rem;
+    }
+    .text, .submit, .url, .text1 {
+        width: 50%;
+    }
+    .month {
+        width: 30%;
+    }
+ }
+
