@@ -82,7 +82,7 @@ const AdminLogin = () => {
                 onChange={(event) => setUsername(event.target.value)}
                 placeholder="Your email"
                 size="large"
-              />
+              /><br />
               <label for='password'>Password</label>
               <input
                 className='text1'
