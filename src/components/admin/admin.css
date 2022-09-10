@@ -105,7 +105,7 @@
 
 @media screen and (max-width: 400px) {
     .container, .container2,.video-container2 {
-        width: 22rem;
+        width: 20rem;
     }
     .text, .submit, .url, .text1 {
         width: 80%;
