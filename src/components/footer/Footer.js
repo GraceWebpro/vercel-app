@@ -28,6 +28,7 @@ const Footer = () => {
         <a href='https://www.tiktok.com/@michaelo.wilson?lang=en'><IconContext.Provider value={{color: "white", size: "20px" }}><FaTiktok onMouseOver={({target}) => target.style.color="gray"} onMouseOut={({target}) => target.style.color="#fff"} /></IconContext.Provider></a>
       
       </div>
+      <br />
       <Link to='/login' className='admin'>Admin</Link>
 
     </div>
