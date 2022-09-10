@@ -1,5 +1,6 @@
 import { FaInstagram, FaFacebookF, FaTwitter, FaYoutube, FaApple, FaSpotify, FaAmazon, FaTiktok } from 'react-icons/fa'
 import { IconContext } from 'react-icons/lib';
+import { Link } from 'react-router-dom';
 import './Footer.css'
 
 const Footer = () => {
@@ -27,6 +28,7 @@ const Footer = () => {
         <a href='https://www.tiktok.com/@michaelo.wilson?lang=en'><IconContext.Provider value={{color: "white", size: "20px" }}><FaTiktok onMouseOver={({target}) => target.style.color="gray"} onMouseOut={({target}) => target.style.color="#fff"} /></IconContext.Provider></a>
       
       </div>
+      <Link to='/login' className='admin'>Admin</Link>
 
     </div>
     
