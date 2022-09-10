@@ -1,0 +1,124 @@
+.navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(189, 185, 188);
+    width: 100%;
+}
+
+
+.header-list {
+    display: flex;
+    justify-content: center;
+    width: 96%;
+    height: 75px;
+    background-color: black;
+    margin-top: 30px;
+}
+
+.link {
+    text-decoration: none;
+    color: white;
+    padding: 20px 20px;
+    font-size: 20px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+.link:hover {
+    color: gray;
+}
+
+h3 {
+    color: white;
+    text-shadow: 3px 3px rgb(170, 164, 164);
+    font-size: 35px;
+    margin-top: 8px;
+}
+
+.hamburger {
+    border: 0;
+    height: 50px;
+    width: 50px;
+    padding: 0.5rem;
+    border-radius: 50%;
+    background-color: gray;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    position: absolute;
+    top: 65px;
+    right: 25px;
+    transform: translateY(-50%);
+    display: none;
+}
+.list {
+    display: none;
+}
+.hamburger:hover {
+    background-color: #333;
+}
+
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .link {
+        display: none;
+    }
+    
+    h3 {
+        font-size: 25px;
+        margin-left: -450px;
+        margin-top: 20px;
+    }
+    .list {
+        position: absolute;
+        top: 100px;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        height: calc(90vh - 77px);
+        width: 100%;
+        background-color: #1a1818;
+        display: none;
+    }
+    .link2 {
+        text-align: start;
+        text-decoration: none;
+        color: white;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        padding: 1rem 1rem;
+    }
+    .link2:hover {
+        color: gray;
+    }
+    .list.expanded {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 700px) {
+   h3 {
+       margin-right: -60px;
+       font-size: 20px;
+   }
+}
+@media screen and (max-width: 617px) {
+    h3 {
+        margin-right: -220px;
+
+    }
+ }
+
+@media screen and (max-width: 952px) {
+    h3 {
+        font-size: 22px;
+        margin-top: 20px;
+    }
+    .link { 
+        font-size: 15px;
+        margin-top: 10px;
+    }   
+}
