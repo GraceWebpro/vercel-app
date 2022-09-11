@@ -1,11 +1,13 @@
 import React from 'react'
 import useDocumentTitle from '../../useDocumentTitle'
+import './home.css'
 
 const Home = () => {
   useDocumentTitle('Home | Michael O. Wilson')
 
   return (
     <div>
+        
         <h4>Home</h4>
     </div>
   )
