@@ -20,6 +20,7 @@ const UploadVideo = () => {
             }))
 
         })
+        fetchVideos()
     },[])
 
     useEffect(() => {

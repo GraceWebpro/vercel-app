@@ -61,7 +61,7 @@ const Header = () => {
             </div>
         </div>
         <div className="list">
-            <header>Wilson</header>
+            <header>Menu</header>
             <ul>
                 <li><Link className='drop-link' to='/music'><IconContext.Provider value={{color: "white", size: "20px" }}><FaMusic />&nbsp;&nbsp;Music</IconContext.Provider></Link></li>
                 <li><Link className='drop-link' to='/news'><IconContext.Provider value={{color: "white", size: "20px" }}><GiNewspaper />&nbsp;&nbsp;News</IconContext.Provider></Link></li>

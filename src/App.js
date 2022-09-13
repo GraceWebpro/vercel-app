@@ -7,6 +7,7 @@ import AdminLogin from './components/admin/AdminLogin';
 import News from './components/news/News';
 import Home from './components/home/Home';
 import Video from './components/video/Video';
+import NewsDetail from './components/news/NewsDetail';
 
 function App() {
   return (
@@ -24,6 +25,9 @@ function App() {
         </Switch>
         <Switch>
           <Route exact path='/news' component={News}/>
+        </Switch>
+        <Switch>
+          <Route exact path='/news/:id' component={NewsDetail}/>
         </Switch>
         <Switch>
           <Route exact path='/video' component={Video}/>

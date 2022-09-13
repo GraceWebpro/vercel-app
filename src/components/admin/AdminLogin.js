@@ -4,6 +4,7 @@ import Parse from 'parse/dist/parse.min.js';
 import UploadMusic from './UploadMusic';
 import './admin.css'
 import UploadVideo from './UploadVideo';
+import UploadNews from './UploadNews';
 
 // Your Parse initialization configuration goes here
 const PARSE_APPLICATION_ID = 'zhHGEWNxZinpU9x6khFTTJsnPzWFP8Z095UXIgEH';
@@ -126,6 +127,7 @@ const AdminLogin = () => {
           </div>
           <UploadMusic />
           <UploadVideo />
+          <UploadNews />
         </div>)
       }
     </div>

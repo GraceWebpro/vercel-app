@@ -2,6 +2,7 @@ import React from 'react'
 import useDocumentTitle from '../../useDocumentTitle'
 import './home.css'
 
+
 const Home = () => {
   useDocumentTitle('Home | Michael O. Wilson')
 

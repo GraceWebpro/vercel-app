@@ -1,6 +1,6 @@
 import React from 'react'
 import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage'
-import { collection, addDoc } from "@firebase/firestore";
+import { collection, addDoc, Timestamp } from "@firebase/firestore";
 import { storage, db } from '../../config/firebase'
 import { useState } from 'react';
 
@@ -25,7 +25,7 @@ const UploadMusic = () => {
   const imageAsFile = (e) => {
     setFile(e.target.files[0]);
   }
-
+  const createdAt = Timestamp.now();
   const onSubmit = async (e) => {
     try {
       e.preventDefault()
@@ -52,6 +52,7 @@ const UploadMusic = () => {
               images: downloadUrl,
               homepage: userInfo.homepage,
               month: userInfo.month,
+              createdAt
             })
             setUserInfo({
               ...userInfo,

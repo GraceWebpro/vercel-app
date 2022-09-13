@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { collection, onSnapshot } from "@firebase/firestore";
 import { db } from '../../config/firebase'
-import { Link } from 'react-router-dom';
 import useDocumentTitle from '../../useDocumentTitle';
 
-const News = () => {
+const NewsDetail = () => {
     useDocumentTitle('News | Michael O. Wilson')
-
 
     const [isNews, setNews] = useState([]);
     useEffect(() => {
@@ -22,25 +20,22 @@ const News = () => {
                     content: doc.data().content
                 }
             }))
-            fetchNews();
+
         })
+        fetchNews()
     },[])
   return (
     <div>
-        <h1>News</h1>
         {isNews.map(isNews => {
             return (
-                <div key={isNews.id} className='news-container'>
-                    <div className='news'>
-                    <img src={isNews.image} alt={isNews.title} width={320} height={320} />
-                      <Link to={`/news/${isNews.id}`}><h3>{isNews.title}</h3></Link>
-                    </div>
+                <div key={isNews.id} className='music-container'>
+                    <h1>{isNews.title}</h1>
+                    <p>{isNews.content}</p>
                 </div>
             )
         })}
-        
     </div>
   )
 }
 
-export default News
+export default NewsDetail
