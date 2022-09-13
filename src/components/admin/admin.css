@@ -103,6 +103,20 @@
     width: 80%;
 }
 
+textarea {
+    height: 220px;
+    width: 80%;
+
+}
+
+.new-container {
+    border-radius: 5px;
+    background-color: #d8d5d5;
+    padding: 20px;
+    height: 90vh;
+    width: 25rem;
+    margin-bottom: 20px
+}
 @media screen and (max-width: 400px) {
     .container, .container2,.video-container2 {
         width: 20rem;

@@ -68,14 +68,14 @@ const UploadNews = () => {
   return (
     <div>
         <center>
-            <div className='container2'>
+            <div className='new-container'>
                 
               <h2>Upload Music</h2>
               <form onSubmit={onSubmit}>
                 <input className='file' type='file' onChange={imageAsFile} />
                 <input className='text' type='title' name='title' placeholder='title' value={userInfo.title} onChange={onChange} />
                 <input className='text' type='subTitle' name='subTitle' placeholder='sub-title' value={userInfo.subTitle} onChange={onChange}  />
-                <textarea className='hello' type='content' name='content' value={userInfo.content} onChange={onChange}  />
+                <textarea type='content' name='content' value={userInfo.content} onChange={onChange}  />
                 <input className='submit' type='submit' value='submit' />
               </form>
               <p>{ progress }</p>

@@ -29,7 +29,9 @@ const NewsDetail = () => {
         {isNews.map(isNews => {
             return (
                 <div key={isNews.id} className='music-container'>
-                    <h1>{isNews.title}</h1>
+                    <img src={isNews.image} alt={isNews.title} width={320} height={320} />
+                    <h3>{isNews.title}</h3>
+                    <h5>{isNews.subTitle}</h5>
                     <p>{isNews.content}</p>
                 </div>
             )
