@@ -118,10 +118,10 @@ textarea {
     margin-bottom: 20px
 }
 @media screen and (max-width: 400px) {
-    .container, .container2,.video-container2 {
+    .container, .container2,.video-container2, .new-container {
         width: 20rem;
     }
-    .text, .submit, .url, .text1 {
+    .text, .submit, .url, .text1, textarea {
         width: 80%;
     }
     
