@@ -34,10 +34,10 @@ const Music = () => {
             return (
                 <div key={isMusic.id} className='music-container'>
                     <div className='music'>
-                        <Link to={isMusic.homepage}>
+                        <a href={isMusic.homepage}>
                             <img src={isMusic.image} alt={isMusic.title} width={320} height={320} />
-                        </Link>
-                        <h4><Link to={isMusic.homepage}>{isMusic.title}</Link></h4>
+                        </a>
+                        <h4><a href={isMusic.homepage}>{isMusic.title}</a></h4>
                         <p>{isMusic.month}</p>
                     </div>
                 </div>
