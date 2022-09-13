@@ -13,7 +13,7 @@ const Music = () => {
         const collRef = collection(db, 'music')
         const createdAt = Timestamp.now();
 
-        const fetchUsers = onSnapshot(collRef, orderBy('createdAt'), snapshot => {
+        const fetchUsers = onSnapshot(collRef, orderBy(createdAt), snapshot => {
             setMusic(snapshot.docs.map(doc => {
                 return {
                     id: doc.id,
