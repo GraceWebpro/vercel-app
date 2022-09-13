@@ -27,7 +27,7 @@ function App() {
           <Route exact path='/news' component={News}/>
         </Switch>
         <Switch>
-          <Route exact path='/news/:id' component={NewsDetail}/>
+          <Route exact path=':newsId' component={NewsDetail}/>
         </Switch>
         <Switch>
           <Route exact path='/video' component={Video}/>

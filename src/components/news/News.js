@@ -36,7 +36,7 @@ const News = () => {
                       <img src={isNews.image} alt={isNews.title} width={320} height={320} />
                     </Link>
                     <Link to={`/news/${isNews.id}`}><h4>{isNews.title}</h4></Link>
-                    <a href={`/news/${isNews.id}`}><button>Read More</button></a>
+                    <Link to={'/news/' + isNews.id}><button>Read More</button></Link>
                     </div>
                 </div>
             )
