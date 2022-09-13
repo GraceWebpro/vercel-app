@@ -3,7 +3,8 @@ import { collection, onSnapshot, orderBy, Timestamp } from "@firebase/firestore"
 import { db } from '../../config/firebase'
 import './music.css'
 import useDocumentTitle from '../../useDocumentTitle';
-import { Link } from 'react-router-dom';
+
+
 const Music = () => {
     useDocumentTitle('Music | Michael O. Wilson')
 

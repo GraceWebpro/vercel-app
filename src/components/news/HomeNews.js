@@ -21,6 +21,7 @@ const HomeNews = () => {
                     image: doc.data().images,
                     subTitle: doc.data().subTitle,
                     content: doc.data().content,
+                    date: doc.data().date,
                     createdAt
                 }
             }))
@@ -37,6 +38,8 @@ const HomeNews = () => {
                     <Link to={`/news/${isNews.id}`}>
                       <img src={isNews.image} alt={isNews.title} width={320} height={320} />
                     </Link>
+                    <p>{isNews.date}</p>
+                    <hr />
                     <Link to={`/news/${isNews.id}`}><h4>{isNews.title}</h4></Link>
                     <Link to={`/news/${isNews.id}`}><button>Read More</button></Link>
                     </div>

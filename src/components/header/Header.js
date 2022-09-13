@@ -13,7 +13,7 @@ const Header = () => {
   return (
     <div>
         <input type='checkbox' id='check' />
-        <label for='check'>
+        <label htmlFor='check'>
             <FaBars id='btn' />
             <FaTimes id='cancel' />
         </label>

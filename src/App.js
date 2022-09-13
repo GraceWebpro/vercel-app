@@ -9,7 +9,9 @@ import Home from './components/home/Home';
 import Video from './components/video/Video';
 import NewsDetail from './components/news/NewsDetail';
 
+
 function App() {
+
   return (
     <div className="App">
       <Router forceRefresh={true}>
@@ -27,7 +29,7 @@ function App() {
           <Route exact path='/news' component={News}/>
         </Switch>
         <Switch>
-          <Route exact path=':newsId' component={NewsDetail}/>
+          <Route path='/news/:id' component={NewsDetail}/>
         </Switch>
         <Switch>
           <Route exact path='/video' component={Video}/>

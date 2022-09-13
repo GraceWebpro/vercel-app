@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { doc, getDocs } from "@firebase/firestore";
+import { collection, onSnapshot } from "@firebase/firestore";
 import { db } from '../../config/firebase'
 import useDocumentTitle from '../../useDocumentTitle';
 
@@ -8,29 +8,40 @@ const NewsDetail = () => {
     useDocumentTitle('News | Michael O. Wilson')
     const { newsId } = useParams()
 
-    const [blog, setBlog] = useState(null);
+    const [isNews, setNews] = useState([]);
     useEffect(() => {
-        const getBlog = async () => {
-            const newsRef = doc(db, 'news', newsId)
-            const data = await getDocs(newsRef);
-            if (data.exists()) {
-                setBlog(data.data())
-            }
-        }
-        getBlog()
+        const collRef = collection(db, 'news')
+
+        const fetchNews = onSnapshot(collRef, snapshot => {
+            setNews(snapshot.docs.map(doc => {
+                return {
+                    id: doc.id,
+                    title: doc.data().title,
+                    image: doc.data().images,
+                    subTitle: doc.data().subTitle,
+                    content: doc.data().content,
+                    date: doc.data().date
+                }
+            }))
+            fetchNews();
+        })
     },[])
   return (
     <div>
-        {blog.map(blog => {
-            return (
-                <div key={blog.id} className='music-container'>
-                    <img src={blog.image} alt={blog.title} width={320} height={320} />
-                    <h3>{blog.title}</h3>
-                    <h5>{blog.subTitle}</h5>
-                    <p>{blog.content}</p>
-                </div>
-            )
-        })}
+        <center>
+            {isNews.map(isNews => {
+                return (
+                    <div key={isNews.id} className='news-container'>
+                        <img src={isNews.image} alt={isNews.title} width={320} height={320} />
+                        <p>{isNews.date}</p>
+                        <hr />
+                        <h3>{isNews.title}</h3>
+                        <h5>{isNews.subTitle}</h5>
+                        <p>{isNews.content}</p>
+                    </div>
+                )
+            })}
+        </center>
     </div>
   )
 }
