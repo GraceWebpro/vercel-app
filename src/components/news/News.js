@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { collection, onSnapshot } from "@firebase/firestore";
+import { collection, onSnapshot, orderBy, Timestamp } from "@firebase/firestore";
 import { db } from '../../config/firebase'
 import { Link } from 'react-router-dom';
 import useDocumentTitle from '../../useDocumentTitle';
@@ -12,7 +12,7 @@ const News = () => {
     useEffect(() => {
         const collRef = collection(db, 'news')
 
-        const fetchNews = onSnapshot(collRef, snapshot => {
+        const fetchNews = onSnapshot(collRef, orderBy('createdAt'), snapshot => {
             setNews(snapshot.docs.map(doc => {
                 return {
                     id: doc.id,
@@ -20,7 +20,7 @@ const News = () => {
                     image: doc.data().images,
                     subTitle: doc.data().subTitle,
                     content: doc.data().content,
-                    date: doc.data().date
+                    createdAt: Timestamp.fromDate(new Date())
                 }
             }))
             fetchNews();

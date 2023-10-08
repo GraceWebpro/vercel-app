@@ -1,6 +1,6 @@
 import React from 'react'
 import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage'
-import { collection, addDoc } from "@firebase/firestore";
+import { collection, addDoc, Timestamp } from "@firebase/firestore";
 import { storage, db } from '../../config/firebase'
 import { useState } from 'react';
 
@@ -12,6 +12,7 @@ const UploadNews = () => {
     content: '',
     date: '',
   })
+
 
   const onChange = (e) =>{
     setUserInfo({
@@ -54,6 +55,7 @@ const UploadNews = () => {
               subTitle: userInfo.subTitle,
               content: userInfo.content,
               date: userInfo.date,
+              createdAt: Timestamp.fromDate(new Date())
             })
             setUserInfo({
               ...userInfo,

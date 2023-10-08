@@ -12,9 +12,8 @@ const Music = () => {
     const [isMusics, setMusic] = useState([]);
     useEffect(() => {
         const collRef = collection(db, 'music')
-        const createdAt = Timestamp.now();
 
-        const fetchUsers = onSnapshot(collRef, orderBy(createdAt), snapshot => {
+        const fetchUsers = onSnapshot(collRef, orderBy('createdAt'), snapshot => {
             setMusic(snapshot.docs.map(doc => {
                 return {
                     id: doc.id,
@@ -22,7 +21,7 @@ const Music = () => {
                     image: doc.data().images,
                     homepage: doc.data().homepage,
                     month: doc.data().month,
-                    createdAt
+                    createdAt: Timestamp.fromDate(new Date())
                 }
             }))
             fetchUsers();
@@ -31,22 +30,27 @@ const Music = () => {
   return (
     <div>
         <h1>Music</h1>
+        <div  className='row m-cont'>
         {isMusics.map(isMusic => {
             return (
-                <div key={isMusic.id} className='music-container'>
-                    <div className='music'>
-                        <a href={isMusic.homepage}>
-                            <img src={isMusic.image} alt={isMusic.title} width={320} height={320} />
-                        </a>
-                        <h4><a href={isMusic.homepage}>{isMusic.title}</a></h4>
-                        <p>{isMusic.month}</p>
+                <div key={isMusic.id} className='col-xl-4 col-md-4 col-sm-6'>
+                	
+                    <div className="featured-item ">
+                    <a href={isMusic.homepage}>
+                        <img src={isMusic.image} alt={isMusic.title} width={320} height={320} />
+                    </a>
+                    <h4><a href={isMusic.homepage}>{isMusic.title}</a></h4>
+                    <p>{isMusic.month}</p>
+                    <a href={isMusic.homepage} className='btn btn-primary text-light v-btn'><i class="fa fa-share"></i></a>
                     </div>
-                </div>
+                    
+                </div>   
             )
         })}
-        
+        </div>
     </div>
   )
 }
 
 export default Music
+

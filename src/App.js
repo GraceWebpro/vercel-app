@@ -7,6 +7,7 @@ import AdminLogin from './components/admin/AdminLogin';
 import News from './components/news/News';
 import Home from './components/home/Home';
 import Video from './components/video/Video';
+import Contact from './components/contact/contact';
 import NewsDetail from './components/news/NewsDetail';
 
 
@@ -35,7 +36,7 @@ function App() {
           <Route exact path='/video' component={Video}/>
         </Switch>
         <Switch>
-          <Route exact path='/contact' component={Home}/>
+          <Route exact path='/contact' component={Contact}/>
         </Switch>
         <Footer />
       </Router>

@@ -1,0 +1,139 @@
+.contact  .contact-item {
+	max-width: 450px;
+	margin: 0 auto;
+	margin-top: 50px;
+	margin-bottom: 100px;
+}
+
+.contact  .contact-item i {
+	display: block;
+	width: 80px;
+	height: 80px;
+	line-height: 80px;
+	margin: 0 auto;
+	margin-bottom: 30px;
+	text-align: center;
+	font-size: 36px;
+	border: 1px solid #ddd;
+	border-radius: 90px;
+}
+
+.contact  .contact-item .contact-details {
+	display: block;
+	text-align: center;
+	font-size: 22px;
+	line-height: 32px;
+}
+
+.form-content p{
+	font-size: 22px;
+	line-height: 32px;
+	text-align: center;
+}
+
+.form-content form {
+	margin-top: 30px;
+}
+
+.form-content form .error {
+	display: inline-block;
+	margin-top: 5px;
+	font-size: 12px;
+	font-weight: normal;
+	color: #e90404;
+}
+
+.form-content form label {
+	padding-bottom: 4px;
+	font-size: 16px;
+	font-weight: 700;
+	color: #454545;
+}
+
+.form-content form .form-control {border-radius: 3px;}
+.form-content form .btn {margin-top: 30px;}
+
+#error, 
+#success {
+	margin-top: 30px;
+	display: none;
+}
+
+
+@import url(https://fonts.googleapis.com/css?family=Merriweather);
+  html,
+  body {
+    background: #f1f1f1;
+    font-family: 'Merriweather', sans-serif;
+    padding: 1em;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #a8a8a8;
+  }
+  
+  form {
+    max-width: 600px;
+    text-align: center;
+    margin: 20px auto;
+  }
+  
+  input,
+  textarea {
+    border: 0;
+    outline: 0;
+    padding: 1em;
+    border-radius: 8px;
+    display: block;
+    width: 100%;
+    margin-top: 1em;
+    font-family: 'Merriweather', sans-serif;
+    resize: none;
+  }
+  
+  #input-submit {
+    color: white;
+    background: #e74c3c;
+    cursor: pointer;
+  }
+  
+  #input-submit:hover {
+    box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.2);
+  }
+  
+  textarea {
+    height: 126px;
+  }
+  
+  .half {
+    float: left;
+    width: 48%;
+    margin-bottom: 1em;
+  }
+  
+  .right {
+    width: 50%;
+  }
+  
+  .left {
+    margin-right: 2%;
+  }
+  
+  @media (max-width: 480px) {
+    .half {
+      width: 100%;
+      float: none;
+      margin-bottom: 0;
+    }
+  }
+  
+  .cf:before,
+  .cf:after {
+    content: ' ';
+    display: table;
+  }
+  
+  .cf:after {
+    clear: both;
+  }

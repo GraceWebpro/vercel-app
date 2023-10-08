@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react'
-import { collection, getDocs, addDoc, onSnapshot } from "@firebase/firestore";
+import { collection, getDocs, addDoc, onSnapshot, orderBy, Timestamp } from "@firebase/firestore";
 import { db } from '../../config/firebase'
 
 
 const UploadVideo = () => {
     const [url, setUrl] = useState('')
 
-    
+    const createdAt = Timestamp.now();
+
     const [movies, setMovies] = useState([]);
     useEffect(() => {
         const collRef = collection(db, 'movies')
@@ -46,7 +47,7 @@ const UploadVideo = () => {
         }
 
         const movieCollRef = collection(db, 'movies')
-        addDoc(movieCollRef, {url}).then(response => {
+        addDoc(movieCollRef, orderBy(createdAt), {url}).then(response => {
             console.log(response)
         }).catch(error => {
             console.log(error.message)

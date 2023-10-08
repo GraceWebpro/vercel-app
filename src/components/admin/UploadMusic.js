@@ -25,7 +25,6 @@ const UploadMusic = () => {
   const imageAsFile = (e) => {
     setFile(e.target.files[0]);
   }
-  const createdAt = Timestamp.now();
   const onSubmit = async (e) => {
     try {
       e.preventDefault()
@@ -52,7 +51,8 @@ const UploadMusic = () => {
               images: downloadUrl,
               homepage: userInfo.homepage,
               month: userInfo.month,
-              createdAt
+              createdAt: Timestamp.fromDate(new Date())
+
             })
             setUserInfo({
               ...userInfo,

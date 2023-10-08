@@ -1,47 +1,47 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { collection, onSnapshot } from "@firebase/firestore";
+import { doc, getDoc, Timestamp } from "@firebase/firestore";
 import { db } from '../../config/firebase'
+import { Link } from 'react-router-dom'
 import useDocumentTitle from '../../useDocumentTitle';
 
 const NewsDetail = () => {
     useDocumentTitle('News | Michael O. Wilson')
-    const { newsId } = useParams()
+    const { id } = useParams();
 
-    const [isNews, setNews] = useState([]);
+
+    const [isNews, setNews] = useState({});
     useEffect(() => {
-        const collRef = collection(db, 'news')
+        async function fetchNews(id) {
+            const newsRef = doc(db, 'news', {id});
+            const docSnap = await getDoc(newsRef);
+            const data = docSnap.exists() ? docSnap.data() : null
 
-        const fetchNews = onSnapshot(collRef, snapshot => {
-            setNews(snapshot.docs.map(doc => {
-                return {
+            if (data) {
+                setNews({
                     id: doc.id,
                     title: doc.data().title,
                     image: doc.data().images,
                     subTitle: doc.data().subTitle,
                     content: doc.data().content,
-                    date: doc.data().date
-                }
-            }))
-            fetchNews();
-        })
-    },[])
+                    createdAt: Timestamp.fromDate(new Date())
+                })
+            } else {
+                setNews({});
+            }
+        }
+    },[id])
+
+    console.log('isNews', isNews)
   return (
     <div>
-        <center>
-            {isNews.map(isNews => {
-                return (
-                    <div key={isNews.id} className='news-container'>
-                        <img src={isNews.image} alt={isNews.title} width={320} height={320} />
-                        <p>{isNews.date}</p>
-                        <hr />
-                        <h3>{isNews.title}</h3>
-                        <h5>{isNews.subTitle}</h5>
-                        <p>{isNews.content}</p>
-                    </div>
-                )
-            })}
-        </center>
+        <div key={isNews.id}>
+            <img src={isNews.image} alt={isNews.title} />
+            <p>{isNews.date}</p>
+            <h3>{isNews.title}</h3>
+            <h5>{isNews.subTitle}</h5>
+            <p>{isNews.content}</p>
+        </div>
     </div>
   )
 }
