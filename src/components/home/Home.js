@@ -56,7 +56,6 @@ const Home = () => {
 
       <Promo />
       <HomeMusic />
-  		<FeaturedAlbum />		
       <Promo2 />
   		<FeaturedAlbum />		
       <HomeNews />
