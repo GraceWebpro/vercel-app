@@ -2,8 +2,7 @@ import React from 'react'
 import useDocumentTitle from '../../useDocumentTitle'
 import HomeNews from '../news/HomeNews'
 import HomeMusic from '../music/HomeMusic'
-//import Contact from '../contact/contact'
-import ContactForm from '../contact/contactForm'
+import Contact from '../contact/contact'
 import Player from './latestAlbum/player'
 import './home.css'
 import Banner1 from '../../assets/cover-img.jpg'
@@ -30,22 +29,22 @@ const Home = () => {
         <div id="carouselExampleAutoplaying" className="carousel slide" data-bs-ride="carousel">
           <div className="carousel-inner">
             <div className="carousel-item active">
-              <img src={Banner1} className="d-block w-100" alt='cover' width='100%' height='50%' />
+              <img src={Banner1} className="d-block w-100" alt="..." />
             </div>
             <div className="carousel-item">
-              <img src={Banner1} className="d-block w-100" alt='cover' width='100%' height='50%' />
+              <img src={Banner1} className="d-block w-100" alt="..." />
             </div>
             <div className="carousel-item">
-              <img src={Banner1} className="d-block w-100" alt='cover' width='100%' height='50%' />
+              <img src={Banner1} className="d-block w-100" alt="..." />
             </div>
           </div>
           <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
             <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span className="visually-hidden"></span>
+            <span className="visually-hidden">Previous</span>
           </button>
           <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
             <span className="carousel-control-next-icon" aria-hidden="true"></span>
-            <span className="visually-hidden"></span>
+            <span className="visually-hidden">Next</span>
           </button>
         </div>
 			{/* banner end */}
@@ -56,12 +55,12 @@ const Home = () => {
       {/* latest album ends here */}
 
       <Promo />
+      <HomeMusic />
   		<FeaturedAlbum />		
-            <Promo2 />
-            <HomeMusic />
-        <HomeNews />
-        <ContactForm />
-
+      <Promo2 />
+  		<FeaturedAlbum />		
+      <HomeNews />
+      <Contact />
 
 
     </div>

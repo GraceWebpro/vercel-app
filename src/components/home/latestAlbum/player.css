@@ -115,20 +115,28 @@
 
 .playlist-content {
 	margin-top: 20px;
-	margin-right: 30px;
+	margin-right: 20px;
+	margin-left: 20px;
+
 }
 
 .playlist-content .playlist-number {
 	margin-bottom: 10px;
-	padding: 10px 15px;
+	padding: 10px 10px;
 	background: #fafafa;
 	border: 1px solid #ddd;
 }
 
 .playlist-content .playlist-number .song-info {
 	width: 100%;
-	margin: auto;	
+	margin-right: 30px;	
 }
+
+@media (max-width: 480px) {
+    .playlist-content .playlist-number .song-info {
+		color: #fff;	
+	}
+}	
 
 .playlist-content .playlist-number .song-info h4 {
 	margin-top: 5px;
