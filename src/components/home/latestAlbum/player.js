@@ -16,7 +16,7 @@ const Player = () => {
     <div>
         <div className="container-fluid pad1">
             <div className='hero-content'>
-                <h2>Latest Album</h2>
+                <h2>Latest Single</h2>
                 <hr />
                 <p>Lightening up the <strong className="text-primary">world</strong> through <strong className="text-primary">Music</strong>.</p>
 
@@ -37,8 +37,8 @@ const Player = () => {
 
                     <div className="col-md-6 col-sm-6">
 						<div className="playlist-content">
-							<ul className="list-unstyled">
-                                
+							<h4 className='text-dark'>Recommended singles</h4>
+                            <ul className="list-unstyled">
                                 <AudioPlayer1 />
 
                                 <AudioPlayer2 />

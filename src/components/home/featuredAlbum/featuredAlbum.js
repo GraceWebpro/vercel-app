@@ -5,7 +5,6 @@ import 'animate.css'
 const FeaturedAlbum = () => {
     
     return (
-        <div>
             <div className="featured pad" id="featuredalbum">
 				<div className="container-fluid">
 					<div className="default-heading">
@@ -45,18 +44,19 @@ const FeaturedAlbum = () => {
 									<div className="figure">
 										<img className="img-responsive" src={image1} alt="" />
 										<p className='bg-primary'>There are many variations of passages available, but the majority have suffered Lorem alteration in some form, by injected look even slightly believable.</p>
-</div>
+									</div>
 									<div className="featured-item-info">
 
 										<h4>Bad Brains</h4>
-<hr />	
+										<hr />	
 										<p>1024+ <span className="badge bg-primary">Like</span> &nbsp;&nbsp; 825+ <span class="badge bg-primary">Love</span></p>
-</div></div></div>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-        </div>
     )
 }
 

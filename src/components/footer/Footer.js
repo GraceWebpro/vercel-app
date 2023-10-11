@@ -29,7 +29,7 @@ const Footer = () => {
       
       </div>
       <br />
-      <Link to='/login' className='admin'>Admin</Link>
+      <p>&copy; <Link to='/login' className='admin'>Gracewebpro</Link> 2023</p>
 
     </div>
     

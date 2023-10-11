@@ -40,7 +40,7 @@ function App() {
         </Switch>
         <Footer />
       </Router>
-      
+      <span className="totop"><a href="#top"><i class="fa fa-chevron-up"></i></a></span> 
     </div>
   );
 }

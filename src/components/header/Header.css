@@ -171,13 +171,16 @@ label #cancel {
 }
 */
 
-.drop-link {
+
+.list ul li a {
     margin-top: 10px;
+    margin-left: -120px;
     text-decoration: none;
     color: white;
     padding: 6px 8px 6px 20px;
     font-size: 15px;
     font-weight: 200;
+    left: 50px !important;
     text-transform: uppercase;
     background: none;
     cursor: pointer;

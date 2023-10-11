@@ -65,13 +65,14 @@ const HomeMusic = () => {
         })
     },[])
   return (
+      <div>
     <div class="portfolio pad" id="portfolio">
 		<div>
 		    <div class="default-heading">
 				<h2>Music</h2>
 			</div>
 		</div>
-        <div class="portfolio-content" id="portfolioOwl">
+        <div className="carousel-container" id="portfolioOwl">
 
             <Carousel
             responsive={responsive}
@@ -79,7 +80,6 @@ const HomeMusic = () => {
             autoPlay={true}
             itemClass="music"
             autoPlaySpeed={3000}
-            removeArrowOnDeviceType={["tablet", "mobile"]}
             >
             {isMusics.map(isMusic => {
                 return (
@@ -104,6 +104,7 @@ const HomeMusic = () => {
         <center><Link to='/music'><button className='h-submit btn btn-primary view'>View More</button></Link></center>
 
       </div>
+    </div>
   )
 }
 

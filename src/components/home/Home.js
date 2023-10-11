@@ -13,6 +13,7 @@ import Promo from './promo/promo'
 import Promo2 from './promo2/promo2'
 //import Portfolio from '../portfolio/portfolio'
 import emailjs from '@emailjs/browser';
+import Event from './event/event'
 
 import FeaturedAlbum from './featuredAlbum/featuredAlbum'
 
@@ -57,7 +58,8 @@ const Home = () => {
       <Promo />
       <HomeMusic />
       <Promo2 />
-  		<FeaturedAlbum />		
+  		<FeaturedAlbum />	
+      <Event />	
       <HomeNews />
       <Contact />
 

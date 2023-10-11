@@ -3,7 +3,7 @@ import './Header.css'
 import { Link } from 'react-router-dom'
 import { FaInstagram, FaFacebookF, FaTwitter, FaYoutube, FaApple, FaSpotify, FaAmazon, FaTiktok, FaMusic, FaVideo, FaBars, FaTimes } from 'react-icons/fa'
 import { GiNewspaper } from 'react-icons/gi'
-import { GrContact } from 'react-icons/gr'
+import { BiMessageAltDots} from 'react-icons/bi'
 //import { RiUserFollowFill } from 'react-icons/ri'
 import { IconContext } from 'react-icons/lib';
 
@@ -78,10 +78,11 @@ const Header = () => {
         <div className="list">
             <header>__________________</header>
             <ul>
-                <li><Link className='drop-link' to='/music'><IconContext.Provider value={{color: "white", size: "20px" }}><FaMusic />&nbsp;&nbsp;Music</IconContext.Provider></Link></li>
-                <li><Link className='drop-link' to='/news'><IconContext.Provider value={{color: "white", size: "20px" }}><GiNewspaper />&nbsp;&nbsp;News</IconContext.Provider></Link></li>
-                <li><Link className='drop-link' to='/video'><IconContext.Provider value={{color: "white", size: "20px" }}><FaVideo />&nbsp;&nbsp;Video</IconContext.Provider></Link></li>
-                <li><Link className='drop-link' to='/contact'><IconContext.Provider value={{color: "white", size: "20px" }}><GrContact />&nbsp;&nbsp;Contact</IconContext.Provider></Link></li>
+                <li><Link to='/music'><IconContext.Provider value={{color: "white", size: "20px" }}><FaMusic />&nbsp;&nbsp;Music</IconContext.Provider></Link></li>
+                <li><Link to='/news'><IconContext.Provider value={{color: "white", size: "20px" }}><GiNewspaper />&nbsp;&nbsp;News</IconContext.Provider></Link></li>
+                <li><Link to='/video'><IconContext.Provider value={{color: "white", size: "20px" }}><FaVideo />&nbsp;&nbsp;Video</IconContext.Provider></Link></li>
+                <li><Link to='/contact' style={{ marginRight: '-20px' }}><IconContext.Provider value={{color: "#fff", size: "20px" }}><BiMessageAltDots />&nbsp;&nbsp;Contact</IconContext.Provider></Link></li>
+
                 {/*<li>
                     <div className='dropdown'>
                         <button className='drop-link'><IconContext.Provider value={{color: "white", size: "20px" }}><RiUserFollowFill />&nbsp;&nbsp;Follow</IconContext.Provider></button>
